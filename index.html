@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026 - Simulador de Confinamento Bovino</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>🐂 Agro Forte, Futuro Sustentável</h1>
+    <nav>
+        <button class="nav-btn active" onclick="mostrarPagina(event, 'simulador')">Simulador</button>
+        <button class="nav-btn" onclick="mostrarPagina(event, 'sobre')">Sobre Mim</button>
+        <button class="nav-btn" onclick="mostrarPagina(event, 'agrinho')">Sobre o Agrinho</button>
+    </nav>
+</header>
+
+<main>
+
+    <!-- SIMULADOR -->
+    <section id="simulador" class="pagina ativa">
+        <h2>Simulador de Confinamento Bovino</h2>
+        <div class="card">
+
+            <label>Peso inicial do boi (kg)</label>
+            <input type="number" id="pesoInicial" value="350">
+
+            <label>Raça</label>
+            <select id="raca">
+                <option value="Nelore">Nelore</option>
+                <option value="Angus">Angus</option>
+                <option value="Senepol">Senepol</option>
+                <option value="Cruzamento Industrial">Cruzamento Industrial</option>
+            </select>
+
+            <label>Tipo de dieta</label>
+            <select id="dieta">
+                <option value="economica">Econômica</option>
+                <option value="balanceada">Balanceada</option>
+                <option value="intensiva">Intensiva</option>
+            </select>
+
+            <label>Quantidade de ração por dia (kg)</label>
+            <input type="number" id="racao" value="8">
+
+            <label>Tempo de confinamento (dias)</label>
+            <input type="number" id="dias" value="90">
+
+            <label>Preço da arroba (R$)</label>
+            <input type="number" id="precoArroba" value="320">
+
+            <label>Custo da ração por kg (R$)</label>
+            <input type="number" id="custoRacao" value="3.5">
+
+            <button onclick="simular()">Calcular</button>
+
+        </div>
+
+        <div id="resultado" class="resultado">
+            <h3>Resultado da Simulação</h3>
+            <p><strong>Peso Final:</strong> -- kg</p>
+            <p><strong>Arrobas Finais:</strong> -- @</p>
+            <p><strong>Ganho de Peso:</strong> -- kg</p>
+            <p><strong>Consumo total de ração:</strong> -- kg</p>
+            <p><strong>Consumo estimado de água:</strong> -- litros</p>
+            <p><strong>Custo total da alimentação:</strong> R$ --</p>
+            <p><strong>Valor do animal:</strong> R$ --</p>
+            <p><strong>Lucro estimado:</strong> R$ --</p>
+            <p><strong>Índice de sustentabilidade:</strong> --</p>
+        </div>
+
+        <canvas id="graficoCrescimento" height="200"></canvas>
+
+    </section>
+
+    <!-- SOBRE MIM -->
+    <section id="sobre" class="pagina">
+        <h2>Sobre Mim</h2>
+        <div class="card">
+            <p>Olá! Meu nome é <strong>Matheus Pereira Dos Santos</strong>, sou aluno do 3º ano do Ensino Médio.</p>
+            <p>Este projeto foi desenvolvido para o Concurso Agrinho 2026, buscando demonstrar como tecnologia pode ajudar na produção agropecuária de forma sustentável.</p>
+            <p>O simulador permite visualizar crescimento de bovinos, eficiência alimentar e impacto ambiental do confinamento.</p>
+        </div>
+    </section>
+
+    <!-- AGRINHO -->
+    <section id="agrinho" class="pagina">
+        <h2>Sobre o Concurso Agrinho</h2>
+        <div class="card">
+            <p>O Agrinho é um dos maiores programas educacionais do Brasil, incentivando estudantes a refletirem sobre cidadania, meio ambiente e sustentabilidade.</p>
+            <p>Tema 2026: <strong>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente.</strong></p>
+            <p>Este projeto mostra como o confinamento de bovinos pode aumentar a eficiência produtiva e reduzir pressão sobre novas áreas de pastagem.</p>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>Projeto desenvolvido para o Concurso Agrinho 2026</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
