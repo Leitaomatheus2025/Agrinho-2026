@@ -2,7 +2,7 @@ function mostrarPagina(event, id) {
     let paginas = document.querySelectorAll(".pagina");
     paginas.forEach(p => p.classList.remove("ativa"));
     document.getElementById(id).classList.add("ativa");
-
+// A lógica foi criada por IA.
     let botoes = document.querySelectorAll(".nav-btn");
     botoes.forEach(btn => btn.classList.remove("active"));
     event.currentTarget.classList.add("active");
